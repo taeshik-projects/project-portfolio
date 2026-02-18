@@ -821,11 +821,11 @@
         // 노드 텍스트 그리기 - D3 표준 방사형 패턴 사용
         node.append('text')
             .attr('dy', '0.35em')
-            .attr('x', d => d.x < Math.PI ? 10 : -10)
+            .attr('x', d => d.x < Math.PI ? 6 : -6)
             .attr('text-anchor', d => d.x < Math.PI ? 'start' : 'end')
             .attr('transform', d => {
                 const angle = d.x * 180 / Math.PI - 90;
-                return `rotate(${angle})translate(${d.y + 8},0)${d.x >= Math.PI ? 'rotate(180)' : ''}`;
+                return `rotate(${angle})translate(${d.y},0)${d.x >= Math.PI ? 'rotate(180)' : ''}`;
             })
             .text(d => {
                 // 텍스트 길이에 따라 줄임
