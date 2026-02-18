@@ -1,0 +1,385 @@
+[
+  {
+    "measure": 1,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 122
+  },
+  {
+    "measure": 2,
+    "chord": "A",
+    "bass_note": "A2",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 137
+  },
+  {
+    "measure": 3,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 132
+  },
+  {
+    "measure": 4,
+    "chord": "A",
+    "bass_note": "A2",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 111
+  },
+  {
+    "measure": 5,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 122
+  },
+  {
+    "measure": 6,
+    "chord": "A",
+    "bass_note": "A2",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 137
+  },
+  {
+    "measure": 7,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 130
+  },
+  {
+    "measure": 8,
+    "chord": "F#m",
+    "bass_note": "F#3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 111
+  },
+  {
+    "measure": 9,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 140
+  },
+  {
+    "measure": 10,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 182
+  },
+  {
+    "measure": 11,
+    "chord": "E",
+    "bass_note": "E3",
+    "pitch_classes": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "all_pitches_count": 166
+  },
+  {
+    "measure": 12,
+    "chord": "A",
+    "bass_note": "A3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "all_pitches_count": 158
+  },
+  {
+    "measure": 13,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 144
+  },
+  {
+    "measure": 14,
+    "chord": "A",
+    "bass_note": "A2",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 138
+  },
+  {
+    "measure": 15,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 131
+  },
+  {
+    "measure": 16,
+    "chord": "F#m",
+    "bass_note": "F#3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 180
+  },
+  {
+    "measure": 17,
+    "chord": "A",
+    "bass_note": "A2",
+    "pitch_classes": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 140
+  },
+  {
+    "measure": 18,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 182
+  },
+  {
+    "measure": 19,
+    "chord": "E",
+    "bass_note": "E3",
+    "pitch_classes": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "all_pitches_count": 166
+  },
+  {
+    "measure": 20,
+    "chord": "A",
+    "bass_note": "A3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "all_pitches_count": 158
+  },
+  {
+    "measure": 21,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 144
+  },
+  {
+    "measure": 22,
+    "chord": "A",
+    "bass_note": "A2",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 138
+  },
+  {
+    "measure": 23,
+    "chord": "D",
+    "bass_note": "D3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 131
+  },
+  {
+    "measure": 24,
+    "chord": "F#m",
+    "bass_note": "F#3",
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ],
+    "all_pitches_count": 118
+  }
+]

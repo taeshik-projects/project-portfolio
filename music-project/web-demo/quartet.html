@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ode to Joy - String Quartet (Auto-Arranged)</title>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .player {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        midi-player {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .info h3 {
+            margin-top: 0;
+        }
+        .info ul {
+            line-height: 1.8;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Ode to Joy</h1>
+        <div class="subtitle">String Quartet - Auto-Arranged by AI</div>
+        
+        <div class="player">
+            <h2>▶️ Listen</h2>
+            <midi-player
+                src="ode_to_joy_quartet_v1.mid"
+                sound-font 
+                visualizer="#myVisualizer">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="ode_to_joy_quartet_v1.mid" download class="download-btn">⬇️ Download MIDI</a>
+                <a href="ode_to_joy_quartet_v1.musicxml" download class="download-btn">⬇️ Download MusicXML</a>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📊 Arrangement Details</h3>
+            <ul>
+                <li><strong>Original:</strong> Orchestral Score (35 parts)</li>
+                <li><strong>Output:</strong> String Quartet (4 parts)</li>
+                <li><strong>Algorithm:</strong> Weighted note selection</li>
+                <li><strong>Processing:</strong> 96 segments (1 beat per segment)</li>
+            </ul>
+            
+            <h3>🎼 Voice Assignment</h3>
+            <div>
+                <span class="badge">Violin I - Melody (highest)</span>
+                <span class="badge">Violin II - Harmony</span>
+                <span class="badge">Viola - Harmony</span>
+                <span class="badge">Cello - Bass (lowest)</span>
+            </div>
+            
+            <h3>⚙️ Selection Criteria</h3>
+            <ul>
+                <li>Duration (long notes > short notes)</li>
+                <li>Beat position (strong beats > weak beats)</li>
+                <li>Instrument role (bass 2x, melody 1.5x)</li>
+                <li>Lowest note gets 3x bonus for bass line</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            <p>Generated: 2026-02-16</p>
+            <p>Powered by music21 + Python + html-midi-player</p>
+        </div>
+    </div>
+</body>
+</html>

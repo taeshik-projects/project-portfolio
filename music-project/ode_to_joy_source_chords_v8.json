@@ -1,0 +1,240 @@
+[
+  {
+    "measure": 1,
+    "beat": 1,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 1,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.6818181818181818
+  },
+  {
+    "measure": 2,
+    "beat": 1,
+    "chord": "F#m7",
+    "root_source": "freq_11",
+    "confidence": 0.6443661971830985
+  },
+  {
+    "measure": 2,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "freq_11",
+    "confidence": 0.8484848484848485
+  },
+  {
+    "measure": 3,
+    "beat": 1,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 3,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.8181818181818182
+  },
+  {
+    "measure": 4,
+    "beat": 1,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.7878787878787878
+  },
+  {
+    "measure": 4,
+    "beat": 3,
+    "chord": "A",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 5,
+    "beat": 1,
+    "chord": "F#aug",
+    "root_source": "freq_10",
+    "confidence": 0.6666666666666666
+  },
+  {
+    "measure": 5,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.6818181818181818
+  },
+  {
+    "measure": 6,
+    "beat": 1,
+    "chord": "F#m7",
+    "root_source": "freq_11",
+    "confidence": 0.6443661971830985
+  },
+  {
+    "measure": 6,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "freq_11",
+    "confidence": 0.8484848484848485
+  },
+  {
+    "measure": 7,
+    "beat": 1,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 7,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.8181818181818182
+  },
+  {
+    "measure": 8,
+    "beat": 1,
+    "chord": "F#m7",
+    "root_source": "freq_11",
+    "confidence": 0.8484848484848485
+  },
+  {
+    "measure": 8,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 9,
+    "beat": 1,
+    "chord": "A",
+    "root_source": "freq_32",
+    "confidence": 1.0
+  },
+  {
+    "measure": 9,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 10,
+    "beat": 1,
+    "chord": "A7",
+    "root_source": "bass",
+    "confidence": 0.7980769230769231
+  },
+  {
+    "measure": 10,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 11,
+    "beat": 1,
+    "chord": "A7",
+    "root_source": "bass",
+    "confidence": 0.7717391304347826
+  },
+  {
+    "measure": 11,
+    "beat": 3,
+    "chord": "F#7",
+    "root_source": "freq_28",
+    "confidence": 1.0
+  },
+  {
+    "measure": 12,
+    "beat": 1,
+    "chord": "Bm",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 12,
+    "beat": 2,
+    "chord": "E7",
+    "root_source": "freq_24",
+    "confidence": 1.0
+  },
+  {
+    "measure": 12,
+    "beat": 3,
+    "chord": "C#aug",
+    "root_source": "freq_2",
+    "confidence": 0.6666666666666666
+  },
+  {
+    "measure": 12,
+    "beat": 4,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 13,
+    "beat": 1,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 13,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.6818181818181818
+  },
+  {
+    "measure": 14,
+    "beat": 1,
+    "chord": "F#m7",
+    "root_source": "freq_11",
+    "confidence": 0.6458333333333334
+  },
+  {
+    "measure": 14,
+    "beat": 3,
+    "chord": "F#m7",
+    "root_source": "freq_10",
+    "confidence": 0.8333333333333334
+  },
+  {
+    "measure": 15,
+    "beat": 1,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 1.0
+  },
+  {
+    "measure": 15,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.8181818181818182
+  },
+  {
+    "measure": 16,
+    "beat": 1,
+    "chord": "F#m7",
+    "root_source": "freq_11",
+    "confidence": 0.8591549295774648
+  },
+  {
+    "measure": 16,
+    "beat": 3,
+    "chord": "D",
+    "root_source": "bass",
+    "confidence": 0.8073394495412844
+  }
+]

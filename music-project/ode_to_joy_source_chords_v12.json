@@ -1,0 +1,457 @@
+[
+  {
+    "measure": 1,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.1
+  },
+  {
+    "measure": 1,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 2,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 3,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 3,
+    "beat": 3,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 3,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.1
+  },
+  {
+    "measure": 4,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 4,
+    "beat": 2,
+    "chord": "A",
+    "bass": "A2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 4,
+    "beat": 3,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 4,
+    "beat": 4,
+    "chord": "A",
+    "bass": "A2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 5,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 6,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 7,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 7,
+    "beat": 3,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 7,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 8,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 8,
+    "beat": 2,
+    "chord": "A",
+    "bass": "A2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 8,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 9,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 9,
+    "beat": 2,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 9,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 9,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 10,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 10,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 10,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 11,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 11,
+    "beat": 2,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 11,
+    "beat": 3,
+    "chord": "F#",
+    "bass": "F#1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 12,
+    "beat": 1,
+    "chord": "Bm",
+    "bass": "B2",
+    "confidence": 1.0
+  },
+  {
+    "measure": 12,
+    "beat": 2,
+    "chord": "E",
+    "bass": "E2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 12,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 13,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.1
+  },
+  {
+    "measure": 13,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 14,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 14,
+    "beat": 4,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 15,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 15,
+    "beat": 3,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 15,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.1
+  },
+  {
+    "measure": 16,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 16,
+    "beat": 2,
+    "chord": "A",
+    "bass": "A2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 16,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 17,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 17,
+    "beat": 2,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 17,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 17,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 18,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 18,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 18,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 19,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 19,
+    "beat": 2,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 19,
+    "beat": 3,
+    "chord": "F#",
+    "bass": "F#1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 20,
+    "beat": 1,
+    "chord": "Bm",
+    "bass": "B2",
+    "confidence": 1.0
+  },
+  {
+    "measure": 20,
+    "beat": 2,
+    "chord": "E",
+    "bass": "E2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 20,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 21,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.1
+  },
+  {
+    "measure": 21,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 22,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 22,
+    "beat": 4,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 23,
+    "beat": 1,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 23,
+    "beat": 3,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 23,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.1
+  },
+  {
+    "measure": 24,
+    "beat": 1,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.1
+  },
+  {
+    "measure": 24,
+    "beat": 2,
+    "chord": "A",
+    "bass": "A2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 24,
+    "beat": 3,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  },
+  {
+    "measure": 24,
+    "beat": 4,
+    "chord": "D",
+    "bass": "D2",
+    "confidence": 1.1
+  }
+]

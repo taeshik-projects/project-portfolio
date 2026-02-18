@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ode to Joy - String Quartet V7 (Role-Based Arrangement)</title>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(255, 200, 100, 0.3);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .player {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        midi-player {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .role-based {
+            background: rgba(255, 200, 100, 0.2);
+            border-left: 4px solid rgba(255, 200, 100, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .role-based h3 {
+            margin-top: 0;
+            color: #ffd280;
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .info h3 {
+            margin-top: 0;
+        }
+        .info ul {
+            line-height: 1.8;
+        }
+        .role-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid;
+        }
+        .melody-card {
+            border-left-color: #ff6b6b;
+        }
+        .bass-card {
+            border-left-color: #4ecdc4;
+        }
+        .harmony-card {
+            border-left-color: #45b7d1;
+        }
+        .range-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .feedback-highlight {
+            background: rgba(100, 200, 100, 0.2);
+            border-left: 4px solid rgba(100, 200, 100, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Ode to Joy</h1>
+        <div class="subtitle">
+            String Quartet - Auto-Arranged by AI
+            <br>
+            <span class="version-badge">✨ Version 7.0 - Role-Based Approach</span>
+        </div>
+        
+        <div class="feedback-highlight">
+            <h3>🎯 사용자 피드백 반영</h3>
+            <p><strong>대식님의 지적사항:</strong></p>
+            <ol>
+                <li><strong>"멜로디가 없어"</strong> → Violin I이 멜로디 전담</li>
+                <li><strong>"베이스라인도 하나도 남아있지 않았어"</strong> → Cello가 베이스 라인 전담</li>
+                <li><strong>"중음역대는 오케스트라의 가장 중요한 파트를 베껴보자"</strong> → Viola/Violin II가 화성 채움</li>
+            </ol>
+        </div>
+        
+        <div class="role-based">
+            <h3>🎼 역할 기반 편곡 (Role-Based Arrangement)</h3>
+            <p><strong>핵심 아이디어:</strong> 각 악기가 명확한 역할을 가지고, 원곡의 해당 역할 부분에서 음을 추출</p>
+            
+            <div class="role-card melody-card">
+                <h4>🎻 Violin I - 멜로디 라인 (Melody)</h4>
+                <p><strong>전략:</strong> 원곡의 높은 음들(C5↑) 중 가장 중요한 것들 선택</p>
+                <p><strong>결과:</strong> 107개 음표, F#6-A6 (MIDI 57-93)</p>
+            </div>
+            
+            <div class="role-card bass-card">
+                <h4>🎻 Cello - 베이스 라인 (Bass)</h4>
+                <p><strong>전략:</strong> 원곡의 낮은 음들(C3↓) 중 가장 중요한 것들 선택, 베이스 역할 파트 우선</p>
+                <p><strong>결과:</strong> 106개 음표, D2-A3 (MIDI 38-59)</p>
+            </div>
+            
+            <div class="role-card harmony-card">
+                <h4>🎻 Viola & Violin II - 하모니 (Harmony)</h4>
+                <p><strong>전략:</strong> 원곡의 중음역대 음들 중 화성을 채우는 음들 선택</p>
+                <p><strong>결과:</strong> 각각 110개 음표, 중간 음역대</p>
+            </div>
+        </div>
+        
+        <div class="player">
+            <h2>▶️ Listen</h2>
+            <midi-player
+                src="ode_to_joy_quartet_v7.mid"
+                sound-font 
+                visualizer="#myVisualizer">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="ode_to_joy_quartet_v7.mid" download class="download-btn">⬇️ Download MIDI</a>
+                <a href="ode_to_joy_quartet_v7.musicxml" download class="download-btn">⬇️ Download MusicXML</a>
+                <a href="quartet-v6.html" class="download-btn" style="background: rgba(150, 150, 150, 0.3);">👀 View V6</a>
+                <a href="quartet.html" class="download-btn" style="background: rgba(150, 150, 150, 0.2);">👀 View V1</a>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📊 Arrangement Details</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Part</th>
+                        <th>Role</th>
+                        <th>Notes</th>
+                        <th>Range (MIDI)</th>
+                        <th>Range (Note)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Violin I</strong></td>
+                        <td>Melody</td>
+                        <td>107</td>
+                        <td>57-93</td>
+                        <td>F#6 - A6</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Violin II</strong></td>
+                        <td>Upper Harmony</td>
+                        <td>110</td>
+                        <td>57-66</td>
+                        <td>A3 - F#4</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Viola</strong></td>
+                        <td>Middle Harmony</td>
+                        <td>110</td>
+                        <td>50-57</td>
+                        <td>D3 - A3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cello</strong></td>
+                        <td>Bass</td>
+                        <td>106</td>
+                        <td>38-59</td>
+                        <td>D2 - A3</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🎵 Duration Distribution (리듬 보존)</h3>
+            <ul>
+                <li><strong>8th notes (0.5 beats):</strong> 33 notes</li>
+                <li><strong>Quarter notes (1.0 beats):</strong> 57-60 notes ⭐️</li>
+                <li><strong>Dotted quarter (1.5 beats):</strong> 4 notes</li>
+                <li><strong>Half notes (2.0 beats):</strong> 13-15 notes</li>
+            </ul>
+            
+            <h3>⚙️ Selection Algorithm</h3>
+            <ul>
+                <li><strong>Melody Extraction:</strong> 높은 음(C5↑) + duration 길수록 + 강박일수록 중요</li>
+                <li><strong>Bass Extraction:</strong> 낮은 음(C3↓) + 베이스 역할 파트 + 긴 duration 중요</li>
+                <li><strong>Harmony Filling:</strong> 원곡의 실제 중음역대 음 사용 → 없으면 화성에 맞는 음 생성</li>
+                <li><strong>Range Adjustment:</strong> 각 악기의 연주 가능 음역 내로 조정</li>
+            </ul>
+            
+            <h3>🔍 Evolution from V6</h3>
+            <ul>
+                <li><strong>V6:</strong> 화성 구간 분석 → 일관된 화성 but 역할 불분명</li>
+                <li><strong>V7:</strong> 역할 기반 접근 → 멜로디/베이스/하모니 명확 분리</li>
+                <li><strong>Key Fix:</strong> 멜로디 라인 복원, 베이스 라인 강화</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            <p>Generated: 2026-02-16 | Version 7.0 (Role-Based Approach)</p>
+            <p><strong>Feedback-Driven Development:</strong> V1 → V4 → V6 → V7 (사용자 피드백 기반 진화)</p>
+            <p>Powered by music21 + Python + html-midi-player</p>
+        </div>
+    </div>
+</body>
+</html>

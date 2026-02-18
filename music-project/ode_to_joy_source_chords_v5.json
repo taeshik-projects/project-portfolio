@@ -1,0 +1,327 @@
+[
+  {
+    "measure": 1,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 2,
+    "chord": "Asus4",
+    "bass": "A3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 3,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 4,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 5,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 6,
+    "chord": "Asus4",
+    "bass": "A3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 7,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 8,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 9,
+    "chord": "C#m",
+    "bass": "C#3",
+    "confidence": 0.6666666666666666,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 10,
+    "chord": "C#dim",
+    "bass": "C#3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 11,
+    "chord": "C#dim",
+    "bass": "C#3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9,
+      10
+    ]
+  },
+  {
+    "measure": 12,
+    "chord": "Bm",
+    "bass": "B3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ]
+  },
+  {
+    "measure": 13,
+    "chord": "D",
+    "bass": "D4",
+    "confidence": 1.0,
+    "pitch_classes": [
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 14,
+    "chord": "A",
+    "bass": "A3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 15,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 16,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 17,
+    "chord": "C#m",
+    "bass": "C#3",
+    "confidence": 0.6666666666666666,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 18,
+    "chord": "C#dim",
+    "bass": "C#3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 19,
+    "chord": "C#dim",
+    "bass": "C#3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9,
+      10
+    ]
+  },
+  {
+    "measure": 20,
+    "chord": "Bm",
+    "bass": "B3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      9,
+      11
+    ]
+  },
+  {
+    "measure": 21,
+    "chord": "D",
+    "bass": "D4",
+    "confidence": 1.0,
+    "pitch_classes": [
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 22,
+    "chord": "A",
+    "bass": "A3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "measure": 23,
+    "chord": "D",
+    "bass": "D3",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "measure": 24,
+    "chord": "A",
+    "bass": "A1",
+    "confidence": 1.0,
+    "pitch_classes": [
+      1,
+      2,
+      4,
+      6,
+      9
+    ]
+  }
+]

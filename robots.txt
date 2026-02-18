@@ -1,0 +1,5 @@
+# robots.txt - 모든 검색엔진 크롤러 차단
+# Block all search engine crawlers
+
+User-agent: *
+Disallow: /

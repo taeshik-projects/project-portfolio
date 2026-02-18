@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동 채보 및 편곡 소프트웨어 사업 분석</title>
+    <style>
+        :root {
+            --background-color: #f4f7f6;
+            --text-color: #333;
+            --header-color: #2c3e50;
+            --link-color: #3498db;
+            --border-color: #ecf0f1;
+            --card-background: #ffffff;
+            --accent-color: #2ecc71; /* Green for action items */
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #2c3e50;
+                --text-color: #ecf0f1;
+                --header-color: #ecf0f1;
+                --link-color: #3498db;
+                --border-color: #34495e;
+                --card-background: #34495e;
+                --accent-color: #2ecc71;
+            }
+        }
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--card-background);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3, h4 {
+            color: var(--header-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: var(--link-color);
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        strong {
+            color: var(--header-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--border-color);
+            font-weight: bold;
+        }
+        .section-box {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .action-item {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            body {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>자동 채보 및 편곡 소프트웨어 사업 아이템 심층 분석</h1>
+        <p><strong>배경:</strong> 대식님(KAIST 학석박, 하버드 포닥, ASML Senior Optical Engineer, Norwalk Symphony 프로 바이올리니스트)이 새로운 부수입 아이디어를 제안했습니다: 자동 채보 및 편곡 소프트웨어 제작. 대식님의 뛰어난 음감과 악보 채보 능력, 그리고 다양한 편성(string quartet, violin duo 등) 악보에 대한 시장 수요를 바탕으로, 이를 자동화하는 소프트웨어 개발 및 판매를 목표로 합니다.</p>
+
+        <div class="section-box">
+            <h2>1. 시장 조사 (2024-2026 트렌드)</h2>
+
+            <h3>1.1. 자동 채보(Automatic Music Transcription) 기술 현황 및 주요 플레이어</h3>
+            <p>자동 채보(AMT) 기술은 딥러닝과 신경망(CNN)의 적용으로 활발히 연구되고 있으며 지속적인 발전을 보입니다. 하지만 음악 신호의 다양성 포착과 인간 수준의 정확도 달성에는 여전히 한계가 있습니다. 특정 사용 사례에 맞춰 알고리즘을 조정하는 것이 중요합니다.</p>
+            <h4>주요 플레이어:</h4>
+            <ul>
+                <li><strong>AnthemScore:</strong> AI 기반 자동 음악 채보 소프트웨어. 오디오 파일을 악보로 변환하며, 일회성 구매 모델을 채택. 범용적인 채보에 중점.</li>
+                <li><strong>Klangio:</strong> 악기별 AI 채보 모델 사용. 코드, 멜로디, 리듬, 타이밍 추출. Trustpilot 리뷰에서 성능 우수하나, "이상한 표기법" 등 한계점 지적. 프리미엄 모델.</li>
+                <li><strong>Songscription AI:</strong> 오디오 파일 및 온라인 링크(YouTube, Instagram, TikTok)에서 악보 생성. 프리미엄 모델(무료/유료 구독). 복잡한 곡 채보 품질에 대한 우려 존재.</li>
+                <li><strong>Melody Scanner:</strong> AI 스캐너를 통한 악보 및 MIDI 내보내기 품질에 대한 긍정적 평가.</li>
+            </ul>
+            <p><strong>시장 기회:</strong> 기존 AMT 도구들은 전문 연주자들이 만족할 만한 '연주 가능성'과 음악적 뉘앙스를 제공하는 데 한계가 있습니다. 대식님의 전문성은 이 격차를 메울 수 있는 중요한 차별점이 됩니다.</p>
+
+            <h3>1.2. 자동 편곡(Automatic Arrangement/Orchestration) 기술 현황</h3>
+            <p>"AI 음악 편곡" 또는 "오케스트레이션"에 대한 직접적인 전문 소프트웨어는 아직 초기 단계입니다. 대부분은 '텍스트-음악' 생성, AI 지원 믹싱 등 전반적인 음악 제작에 초점을 맞춥니다. 기존 멜로디/작품을 특정 악기 구성(현악 4중주, 바이올린 듀오 등)에 맞게 편곡하는 전문 AI 소프트웨어는 명확히 발견되지 않습니다.</p>
+            <ul>
+                <li><strong>주요 도구 (범용 AI 음악 생성):</strong> Soundverse.ai, Audiocipher.com, Musicful.ai, TopMediai 등은 주로 새로운 음악 생성에 초점.</li>
+                <li>Reddit의 작곡가 커뮤니티에서는 AI의 오케스트라 편곡 능력에 대해 회의적 시각 존재, 고품질 편곡 도구 시장의 공백 시사.</li>
+            </ul>
+            <p><strong>시장 기회:</strong> 기존 음악을 특정 소규모 앙상블을 위한 연주 가능한 악보로 자동 편곡하는 전문 AI 도구는 시장에서 제대로 제공되지 않고 있습니다. 대식님의 음악적 판단과 편성 이해는 강력한 경쟁 우위가 됩니다.</p>
+
+            <h3>1.3. 악보 마켓플레이스 시장 규모 및 수요</h3>
+            <p>디지털 악보 시장은 강력한 성장세를 보입니다.</p>
+            <ul>
+                <li><strong>글로벌 디지털 악보 시장 규모 (2024년):</strong> 약 $4.25억 ~ $8.6억 규모로 추정되며, 2033년까지 연평균 성장률(CAGR) 10.6% ~ 10.7%로 성장 예상.</li>
+                <li>특정 편성(현악 4중주, 바이올린 듀오 등) 악보 시장 규모에 대한 직접적인 데이터는 부족하나, 대식님의 경험상 해당 수요는 존재.</li>
+            </ul>
+            <p><strong>결론:</strong> 자동 채보 기술은 발전 중이나 전문 편곡 영역은 미개척입니다. 디지털 악보 시장의 성장은 긍정적이며, 대식님의 전문성은 시장 틈새 공략에 핵심적입니다.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>2. 기술 구현 방법</h2>
+
+            <h3>2.1. AI/ML 모델 (음원 분석, 채보, 편곡)</h3>
+            <ul>
+                <li><strong>음원 분석 및 특징 추출:</strong>
+                    <ul>
+                        <li>Python: <code>libROSA</code>, <code>pyAudioAnalysis</code>, <code>pyAudioProcessing</code> (MFCC, GFCC 등)</li>
+                        <li>C++: <code>Essentia</code> (오디오/음악 분석, Python 바인딩 제공)</li>
+                        <li>주요 특징: 피치, 온셋, 박자, 화성, 음색 등.</li>
+                    </ul>
+                </li>
+                <li><strong>자동 채보 (AMT):</strong>
+                    <ul>
+                        <li>모델: 주로 CNN, RNN, BLSTM, Transformer 기반 딥러닝 모델.</li>
+                        <li>작동 원리: 음원 신호에서 피치, 지속 시간, 온셋 등 추출 → 개별 음표 식별 → 악보 변환. 다성 음악 채보 난이도 높음.</li>
+                    </ul>
+                </li>
+                <li><strong>자동 편곡 (Automatic Arrangement/Orchestration):</strong>
+                    <ul>
+                        <li>모델: 생성형 AI (GAN, VAE, Transformer 기반 모델 예: Music Transformer, MuseNet).</li>
+                        <li>작동 원리: 원곡 멜로디/화성/리듬 분석 → 특정 앙상블(음역, 음색, 주법) 고려 재구성. '실제 연주 가능성' 위해 음악 이론, 화성학, 악기론 반영 필수.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>2.2. 사용 가능한 오픈소스 라이브러리/프레임워크</h3>
+            <ul>
+                <li><strong>딥러닝 프레임워크:</strong> TensorFlow, PyTorch</li>
+                <li><strong>음악 정보 처리 (MIR) 라이브러리:</strong>
+                    <ul>
+                        <li>Python: <code>libROSA</code>, <code>pyAudioAnalysis</code>, <code>music21</code> (악보/MIDI/MusicXML 처리), <code>pypianoroll</code>, <code>MidiPy</code>.</li>
+                        <li>C++: <code>Essentia</code>, <code>libsndfile</code>.</li>
+                    </ul>
+                </li>
+                <li>**데이터셋:** MAPS, MAESTRO, Lakh MIDI Dataset 등.</li>
+            </ul>
+
+            <h3>2.3. 필요한 기술 스택</h3>
+            <ul>
+                <li>**주요 언어:** Python (AI/ML 개발)</li>
+                <li>**보조 언어 (성능 최적화):** C++ (Essentia 등, 성능 중요 모듈)</li>
+                <li>**데이터베이스:** PostgreSQL, MongoDB</li>
+                <li>**클라우드 플랫폼:** AWS, GCP, Azure (GPU 자원, 인프라)</li>
+                <li>**프론트엔드/백엔드 (웹):**
+                    <ul>
+                        <li>백엔드: Python (Django/Flask) 또는 Java (Spring Boot)</li>
+                        <li>프론트엔드: HTML, CSS, JavaScript (React/Vue/Angular)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>2.4. 대식님의 코딩 경험으로 구현 가능성</h3>
+            <p>대식님은 C++/Java/MATLAB 코딩 경험과 KAIST 학석박, 하버드 포닥, ASML Senior Optical Engineer로서 탄탄한 프로그래밍 및 수학/공학적 배경을 가지고 있습니다.</p>
+            <ul>
+                <li>**장점:** 시스템 설계, 최적화, 신호 처리, 알고리즘 개발 능력 탁월. Python 및 딥러닝 프레임워크 학습 용이.</li>
+                <li>**도전 과제:** 최신 딥러닝 전문성 습득, '음악적 판단'을 AI 모델에 효과적으로 주입 및 평가하는 방법론 구축.</li>
+            </ul>
+            <p><strong>결론:</strong> 대식님의 강력한 기술 배경은 사업 구현에 매우 유리하며, Python을 주력으로 딥러닝 및 음악 이론 적용에 집중한다면 실현 가능성이 높습니다.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>3. 차별화 전략</h2>
+
+            <h3>3.1. 단순 채보 vs. 실제 연주 가능한 편곡의 차이</h3>
+            <ul>
+                <li>**단순 채보의 한계:** 음악적 맥락 부족, 비정형적인 표기, 앙상블 불균형 등.</li>
+                <li>**"실제 연주 가능한 편곡"의 가치:**
+                    <ul>
+                        <li><strong>음악적 완전성:</strong> 각 악기 특성, 음역, 연주 가능성 고려한 자연스러운 선율, 화성, 다이내믹 제공.</li>
+                        <li><strong>연주 용이성:</strong> 현실적인 운지법, 보잉, 아티큘레이션 제안으로 연습 시간 단축 및 연주 만족도 향상.</li>
+                        <li><strong>전문성:</strong> 숙련된 음악가가 의도한 수준의 편곡 품질 보장.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>3.2. String quartet/violin duo 등 특정 편성 특화의 장점</h3>
+            <ul>
+                <li>**고객 명확성 및 타겟 마케팅:** 특정 고객층에 집중하여 마케팅 효율 증대.</li>
+                <li>**기술적 집중:** 특정 편성 특성에 AI 모델 개발 리소스 집중, 높은 품질 및 정확도 달성 가능.</li>
+                <li>**깊이 있는 전문성 구축:** 경쟁사 모방 어려운 핵심 역량 확보.</li>
+                <li>**입소문 효과:** 만족한 연주자들의 강력한 입소문 마케팅.</li>
+            </ul>
+
+            <h3>3.3. 프로 연주자의 음악적 판단이 추가되는 가치</h3>
+            <p>대식님의 가장 독보적인 차별점.</p>
+            <ul>
+                <li>**AI의 한계 극복:** AI가 놓치는 감성, 창의성, 미묘한 뉘앙스에 '인간적인 손길'과 '예술적 통찰' 추가.</li>
+                <li>**최종 검토 및 수정:** AI 1차 편곡 → 대식님 직접 검토/수정 → '음악적' 편곡 완성.</li>
+                <li>**학습 데이터 개선:** 대식님의 피드백이 AI 모델을 '더 음악적인' 편곡으로 훈련시키는 데 결정적 역할.</li>
+                <li>**브랜드 신뢰도:** '프로 연주자가 검증하고 보완한' 소프트웨어로 신뢰도 및 권위 대폭 상승.</li>
+            </ul>
+            <p><strong>요약:</strong> '기술적 정확성'을 넘어 '음악적 연주 가능성'에 초점, 특정 앙상블 특화 고품질 편곡, '프로 연주자의 예술적 판단'으로 완성도를 높이는 전략이 강력한 경쟁력.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>4. 수익 모델 분석</h2>
+
+            <h3>4.1. 소프트웨어 직접 판매 (일회성/구독)</h3>
+            <ul>
+                <li>**일회성 판매:** 초기 사용자 유치 유리, 지속 수익 어려움, 업데이트/유지보수 비용 회수 어려움. (MVP 또는 기본 버전에 적합)</li>
+                <li>**구독 모델:** 지속 가능한 안정적 수익, 최신 버전/기능 제공, 높은 고객 평생 가치. (핵심 편곡/채보 기능 및 클라우드 서비스에 적합)</li>
+            </ul>
+
+            <h3>4.2. 악보 마켓플레이스 모델 (생성된 편곡 악보 판매)</h3>
+            <p>사업의 핵심이자 고부가가치 창출 모델.</p>
+            <ul>
+                <li>**장점:** AI + 전문가 검토 '연주 가능한' 악보의 높은 가치, 다양한 레퍼토리 구축, 저작권 만료 곡 우선 활용 용이, 재판매 가능.</li>
+                <li>**단점:** 저작권 관리/합의 필요, 라이브러리 구축 초기 노력.</li>
+            </ul>
+
+            <h3>4.3. B2B (음악 교육 기관, 출판사)</h3>
+            <ul>
+                <li>**장점:** 대량 판매, 안정적 수익원, 시장 확장, 전문성 인정.</li>
+                <li>**단점:** 긴 협상, 커스터마이징 필요.</li>
+                <li>**적합성:** 음악 교육 기관 (학생 악보/자료), 음악 출판사 (편곡 과정 자동화), 음악 콘텐츠 제작사.</li>
+            </ul>
+
+            <h3>4.4. Freemium 모델</h3>
+            <ul>
+                <li>**장점:** 초기 사용자 유치 극대화, 유료 전환 기회, 피드백 수집 용이.</li>
+                <li>**단점:** 무료 사용자 유지 비용, 무료/유료 기능 균형 중요.</li>
+                <li>**구성:** 무료 (짧은 길이 채보/편곡 미리보기), 유료 (고품질 악보, 다양한 편성, 전문가 검토 접근 등).</li>
+            </ul>
+            <p><strong>권장 수익 모델 조합:</strong> 초기 **Freemium**으로 사용자 유입 → **구독 모델**로 핵심 기능 수익 창출 → **악보 마켓플레이스**에서 고품질 편곡 악보 판매 → 장기적으로 **B2B 시장** 확장.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>5. 시장 진입 전략 및 MVP</h2>
+
+            <h3>5.1. 최소 기능 제품(MVP) 정의</h3>
+            <ul>
+                <li>**핵심 기능:**
+                    <ol>
+                        <li>오디오 파일 업로드 및 기본 채보 (단성 음악 우선).</li>
+                        <li>선택된 앙상블(현악 4중주 또는 바이올린 듀오 중 택1)로 자동 편곡.</li>
+                        <li>전문가(대식님) 검토 및 수정하여 최종 '연주 가능한' 악보 제공 (초기 수동).</li>
+                        <li>최종 편곡 악보 PDF 다운로드.</li>
+                    </ol>
+                </li>
+                <li>**초기 데이터셋:** 저작권 만료 클래식 곡 활용.</li>
+            </ul>
+
+            <h3>5.2. 초기 타겟 고객</h3>
+            <ul>
+                <li>**아마추어 현악 앙상블 연주자:** 대중음악/미발표곡을 현악 앙상블로 연주하고 싶으나 편곡 능력/시간 부족.</li>
+                <li>**음악 전공 학생 및 교육 기관:** 편곡 학습 자료 및 즉흥 연주를 위한 다양한 악보 필요 (파일럿 프로그램).</li>
+            </ul>
+
+            <h3>5.3. 필요한 초기 투자/시간</h3>
+            <ul>
+                <li>**시간:** MVP 개발 6~12개월, 초기 악보 라이브러리 구축 3~6개월 (총 9~18개월).</li>
+                <li>**투자 (추정):** 개발 인력 (AI/ML 엔지니어, 백엔드 개발자), GPU 서버, 웹 호스팅, 마케팅 비용 등 수천만 원 ~ 1억 원 이상.</li>
+            </ul>
+
+            <h3>5.4. 예상 수익성</h3>
+            <ul>
+                <li>**초기 (1-2년):** 투자 회수 및 손익분기점 집중, 제한적 이익. (프리미엄 구독, 악보 판매)</li>
+                <li>**중기 (3-5년):** 구독자 증가, 마켓플레이스/B2B 확장, 안정적 이익 창출, 시장 점유율 확대.</li>
+                <li>**장기 (5년 이상):** AI 고도화, 편곡 범위 확장, 글로벌 진출, 높은 수익성 및 브랜드 가치 확보.</li>
+            </ul>
+
+            <h3>5.5. 실현 가능성 점수 (1-10)</h3>
+            <p style="font-size: 1.2em; font-weight: bold; color: var(--accent-color);">8/10</p>
+            <ul>
+                <li>**강점:** 강력한 차별화 (전문가 검증 편곡), 명확한 시장 틈새, 대식님 전문성, 디지털 악보 시장 성장.</li>
+                <li>**약점/도전 과제:** 기술적 난이도 (다성 채보, 음악적 뉘앙스), 저작권 문제, 초기 자본/시간, 시장 수용성.</li>
+            </ul>
+
+            <h3>5.6. 첫 단계 로드맵</h3>
+            <div class="action-item">
+                <p><strong>액션 아이템:</strong></p>
+                <ol>
+                    <li><strong>시장 및 기술 세부 분석:</strong> 경쟁사 채보 소프트웨어 직접 사용 분석, 최신 AI/ML 모델 심층 검토, 저작권 전문가 상담.</li>
+                    <li>**핵심 AI 모델 프로토타입 개발 (Python & TensorFlow/PyTorch):** 음원 분석/기본 채보 모듈 (단성 우선), 초기 편곡 규칙 엔진 개발.</li>
+                    <li>**데이터 수집 및 정제:** 저작권 만료 클래식 곡 오디오/악보 데이터셋 구축, 대식님 직접 편곡 샘플 데이터 생성.</li>
+                    <li>**MVP 웹 플랫폼 기획 및 디자인:** 사용자 친화적 UI/UX 설계, '전문가 검토 요청' 시스템 포함.</li>
+                    <li>**초기 베타 테스터 모집:** 대식님 네트워크 활용, 집중 피드백 수집.</li>
+                    <li>**법률 자문 및 저작권 확보 전략 수립:** 저작권 전문가 협력, 초기 저작권 만료 곡 집중.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <h2>6. 리스크 및 도전 과제</h2>
+
+            <h3>6.1. 기술적 난이도</h3>
+            <ul>
+                <li>**다성 음악 채보 정확성:** 여러 악기 동시 연주 시 각 음표, 악기 분리 난이도 높음.</li>
+                <li>**음악적 뉘앙스 및 표현 반영:** 프레이징, 다이내믹, 아티큘레이션 등 미묘한 표현 구현의 어려움.</li>
+                <li>**편곡의 창의성 및 예술성:** 규칙 적용을 넘어선 창의적/예술적 편곡 생성의 어려움.</li>
+                <li>**데이터셋 부족:** 고품질 AI 모델 학습 위한 방대하고 정제된 데이터셋 구축의 시간/비용 소요.</li>
+            </ul>
+
+            <h3>6.2. 저작권 이슈</h3>
+            <ul>
+                <li>**원곡의 저작권:** 상업적 음악 무단 채보/편곡 판매 시 심각한 법적 문제.</li>
+                <li>**편곡의 저작권:** AI 생성 편곡에 대한 법적 소유권 불분명, 원곡자 해결 선행 필수.</li>
+                <li>**해결 방안:** 저작권 만료 클래식 곡 우선, 원곡 저작권자와 협상(라이선스/매출 공유), CCL 활용, 법률 전문가 자문 필수.</li>
+            </ul>
+
+            <h3>6.3. 경쟁 환경</h3>
+            <ul>
+                <li>**기존 채보 소프트웨어:** AnthemScore, Klangio, Songscription AI 등과의 경쟁.</li>
+                <li>**범용 AI 음악 생성 도구:** Soundverse, Musicful 등 편곡 기능 확장 가능성.</li>
+                <li>**수동 편곡 전문가:** AI 편곡 품질이 인간 수준에 미치지 못할 경우 불리.</li>
+                <li>**차별화 전략 중요성:** '실제 연주 가능한 전문가 검증 편곡', 특정 앙상블 특화 서비스 강조.</li>
+            </ul>
+
+            <h3>6.4. 시장 수용성</h3>
+            <ul>
+                <li>**AI 생성 음악에 대한 편견:** '인간적인 감성 부족' 등 음악가/연주자들의 거부감.</li>
+                <li>**기존 워크플로우와의 충돌:** 새로운 AI 솔루션 전환에 대한 저항.</li>
+                <li>**품질 기대치:** '자동 편곡'에 대한 높은 품질 기대치 미달 시 부정적 인식 확산.</li>
+                <li>**해결 방안:** 대식님 권위 활용 (신뢰도), 초기 성공 사례 홍보, 지속적 품질 개선, AI-인간 협업 투명성 설명.</li>
+            </ul>
+            <p>이러한 리스크와 도전 과제를 명확히 인지하고 전략적으로 접근하며 대식님의 전문성을 최대한 활용한다면 성공적인 사업을 이끌어낼 수 있을 것입니다.</p>
+        </div>
+    </div>
+</body>
+</html>

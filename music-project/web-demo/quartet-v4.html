@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ode to Joy - String Quartet V2 (Auto-Arranged)</title>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(255, 100, 100, 0.3);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .player {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        midi-player {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .improvements {
+            background: rgba(100, 255, 100, 0.2);
+            border-left: 4px solid rgba(100, 255, 100, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .improvements h3 {
+            margin-top: 0;
+            color: #a0ffa0;
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .info h3 {
+            margin-top: 0;
+        }
+        .info ul {
+            line-height: 1.8;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        .range-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Ode to Joy</h1>
+        <div class="subtitle">
+            String Quartet - Auto-Arranged by AI
+            <br>
+            <span class="version-badge">✨ Version 2.0</span>
+        </div>
+        
+        <div class="improvements">
+            <h3>🎉 V2 개선사항</h3>
+            <ul>
+                <li>✅ <strong>원곡 리듬 보존</strong> - 더 이상 모든 음표가 같은 길이가 아님!</li>
+                <li>✅ <strong>악기 음역 고려</strong> - 각 현악기가 연주 가능한 범위 내의 음만 사용</li>
+                <li>✅ <strong>Passing notes 보존</strong> - 멜로디에 필수적인 짧은 음들도 유지</li>
+            </ul>
+        </div>
+        
+        <div class="player">
+            <h2>▶️ Listen</h2>
+            <midi-player
+                src="ode_to_joy_quartet_v4.mid"
+                sound-font 
+                visualizer="#myVisualizer">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="ode_to_joy_quartet_v4.mid" download class="download-btn">⬇️ Download MIDI</a>
+                <a href="ode_to_joy_quartet_v4.musicxml" download class="download-btn">⬇️ Download MusicXML</a>
+                <a href="quartet.html" class="download-btn" style="background: rgba(150, 150, 150, 0.3);">👀 View V1</a>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📊 Arrangement Details</h3>
+            <ul>
+                <li><strong>Original:</strong> Orchestral Score (35 parts)</li>
+                <li><strong>Output:</strong> String Quartet (4 parts)</li>
+                <li><strong>Algorithm:</strong> Role-based voice extraction with rhythm preservation</li>
+                <li><strong>Total notes:</strong> ~107 per part</li>
+            </ul>
+            
+            <h3>🎼 Voice Assignment</h3>
+            <div>
+                <span class="badge">Violin I - Melody (highest)</span>
+                <span class="badge">Violin II - Harmony</span>
+                <span class="badge">Viola - Harmony</span>
+                <span class="badge">Cello - Bass (lowest)</span>
+            </div>
+            
+            <h3>🎵 Playable Ranges (MIDI)</h3>
+            <div class="range-info">
+                <strong>Violin I:</strong> 57-93 (A3-A6) ✓
+            </div>
+            <div class="range-info">
+                <strong>Violin II:</strong> 50-93 (D3-A6) ✓
+            </div>
+            <div class="range-info">
+                <strong>Viola:</strong> 50-91 (D3-G6) ✓
+            </div>
+            <div class="range-info">
+                <strong>Cello:</strong> 38-66 (D2-F#4) ✓
+            </div>
+            
+            <h3>⚙️ Selection Criteria</h3>
+            <ul>
+                <li><strong>Bass:</strong> Lowest notes from bass instruments (3x octave bonus)</li>
+                <li><strong>Melody:</strong> Highest notes from melody instruments</li>
+                <li><strong>Harmony:</strong> Mid-range notes from inner voices</li>
+                <li><strong>Rhythm:</strong> Original note durations preserved</li>
+                <li><strong>Passing notes:</strong> Kept (essential for melody)</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            <p>Generated: 2026-02-16 | Version 2.0</p>
+            <p>Powered by music21 + Python + html-midi-player</p>
+        </div>
+    </div>
+</body>
+</html>

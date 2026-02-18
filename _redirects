@@ -1,0 +1,8 @@
+# Netlify 리다이렉트 규칙
+# https://docs.netlify.com/routing/redirects/
+
+# 루트 경로를 portfolio-dashboard.html로 리다이렉트
+/  /portfolio-dashboard.html  200
+
+# 모든 404 페이지를 메인 페이지로 리다이렉트 (SPA 스타일)
+/*  /portfolio-dashboard.html  200

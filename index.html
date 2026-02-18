@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대식님 프로젝트 포트폴리오</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #9ca3af;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 헤더 스타일 */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 3rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* 프로젝트 그리드 */
+        .projects-section {
+            padding: 2rem 0 4rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-category {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            align-self: flex-start;
+        }
+        
+        .project-category.finance {
+            background: #10b981;
+        }
+        
+        .project-category.music {
+            background: #8b5cf6;
+        }
+        
+        .project-category.tech {
+            background: #f59e0b;
+        }
+        
+        .project-category.other {
+            background: #ef4444;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+        
+        .btn-secondary {
+            background: var(--light);
+            color: var(--dark);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        /* 푸터 */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #333;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        
+        .github-link:hover {
+            background: #444;
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        /* 배지 스타일 */
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #10b981;
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .live-badge i {
+            font-size: 0.7rem;
+            margin-right: 0.3rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>대식님 프로젝트 포트폴리오</h1>
+                <p class="subtitle">투자 분석, 음악 편곡, 기술 프로젝트를 하나의 대시보드에서</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-value">5+</span>
+                        <span class="stat-label">프로젝트 카테고리</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">10+</span>
+                        <span class="stat-label">데모 파일</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">GitHub Pages 호스팅</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 프로젝트 섹션 -->
+        <section class="projects-section">
+            <h2 class="section-title">프로젝트 모음</h2>
+            
+            <div class="projects-grid">
+                <!-- 포트폴리오 대시보드 -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="project-content">
+                        <span class="project-category finance">투자/재무</span>
+                        <h3 class="project-title">포트폴리오 대시보드 <span class="live-badge"><i class="fas fa-circle"></i> LIVE</span></h3>
+                        <p class="project-description">대식님의 투자 포트폴리오를 시각화한 대시보드. 자산 배분, 계좌별 현황, 투자 원칙을 한눈에 확인할 수 있습니다.</p>
+                        <div class="project-links">
+                            <a href="portfolio-dashboard.html" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> 데모 보기
+                            </a>
+                            <a href="portfolio-analysis-2026-02-10.md" class="btn btn-secondary">
+                                <i class="fas fa-file-alt"></i> 분석 보고서
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 투자 전략 분석 -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="project-content">
+                        <span class="project-category finance">투자/재무</span>
+                        <h3 class="project-title">투자 전략 분석</h3>
+                        <p class="project-description">주식, 부동산, 암호화폐 등 다양한 자산군에 대한 전략적 분석과 실행 계획을 정리한 문서입니다.</p>
+                        <div class="project-links">
+                            <a href="investment-strategy-analysis.html" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> 데모 보기
+                            </a>
+                            <a href="investment-constitution.md" class="btn btn-secondary">
+                                <i class="fas fa-file-alt"></i> 투자 헌장
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 음악 편곡 프로젝트 -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                    <div class="project-content">
+                        <span class="project-category music">음악/편곡</span>
+                        <h3 class="project-title">음악 편곡 알고리즘</h3>
+                        <p class="project-description">Ode to Joy를 현악 4중주로 자동 편곡하는 알고리즘 프로젝트. V1부터 V10까지의 발전 과정을 비교해보세요.</p>
+                        <div class="project-links">
+                            <a href="music-project/web-demo/quartet-v10.html" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> 최신 버전 (V10)
+                            </a>
+                            <a href="music-project/web-demo/" class="btn btn-secondary">
+                                <i class="fas fa-folder-open"></i> 모든 버전
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 편곡 이론 연구 -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);"></div>
+                    <div class="project-content">
+                        <span class="project-category music">음악/편곡</span>
+                        <h3 class="project-title">클래식 편곡 이론 연구</h3>
+                        <p class="project-description">클래식 화성학, 대위법, 악기법, 편곡 원칙을 체계적으로 학습한 연구 노트입니다.</p>
+                        <div class="project-links">
+                            <a href="arrangement-theory-notes.md" class="btn btn-primary">
+                                <i class="fas fa-book-open"></i> 연구 노트 보기
+                            </a>
+                            <a href="music-project/" class="btn btn-secondary">
+                                <i class="fas fa-folder-open"></i> 프로젝트 폴더
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- OpenClaw 마인드맵 -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);"></div>
+                    <div class="project-content">
+                        <span class="project-category tech">기술/AI</span>
+                        <h3 class="project-title">OpenClaw 마인드맵</h3>
+                        <p class="project-description">OpenClaw AI 어시스턴트의 구조와 기능을 시각화한 인터랙티브 마인드맵입니다.</p>
+                        <div class="project-links">
+                            <a href="openclaw-mindmap.html" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> 마인드맵 보기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube 전략 분석 -->
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                    <div class="project-content">
+                        <span class="project-category other">콘텐츠/미디어</span>
+                        <h3 class="project-title">YouTube 채널 전략</h3>
+                        <p class="project-description">바이올린 교육 채널을 위한 YouTube 전략 분석과 콘텐츠 기획을 정리한 문서입니다.</p>
+                        <div class="project-links">
+                            <a href="youtube-strategy.html" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> 전략 보기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 정보 섹션 -->
+        <section style="padding: 3rem 0; text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title">GitHub Pages 호스팅 정보</h2>
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--card-shadow); margin-top: 2rem;">
+                <div style="font-size: 5rem; color: var(--primary); margin-bottom: 1rem;">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3 style="margin-bottom: 1rem;">완전 무료 + 무제한 트래픽</h3>
+                <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                    이 포트폴리오는 GitHub Pages를 통해 호스팅됩니다. Netlify의 크레딧 제한 없이 
+                    안정적으로 24/7 서비스됩니다. 모든 파일은 GitHub 리포지토리에 저장되며 
+                    버전 관리가 가능합니다.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                    <div style="background: #f3f4f6; padding: 1rem; border-radius: 10px; min-width: 150px;">
+                        <div style="font-weight: bold; color: var(--primary);">완전 무료</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">호스팅 비용 0원</div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 1rem; border-radius: 10px; min-width: 150px;">
+                        <div style="font-weight: bold; color: var(--primary);">무제한 트래픽</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">월간 제한 없음</div>
+                    </div>
+                    <div style="background: #f3f4f6; padding: 1rem; border-radius: 10px; min-width: 150px;">
+                        <div style="font-weight: bold; color: var(--primary);">자동 HTTPS</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">SSL 인증서 포함</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>대식님 프로젝트 포트폴리오</h3>
+                <p>GitHub Pages를 활용한 정적 웹사이트 호스팅 데모</p>
+                
+                <div style="margin-top: 2rem;">
+                    <p>이 사이트는 다음 기술로 구동됩니다:</p>
+                    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px;">HTML5</span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px;">CSS3</span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px;">GitHub Pages</span>
+                        <span style="background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px;">JavaScript</span>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">
+                    © 2026 김대식. 모든 프로젝트는 GitHub 리포지토리에서 관리됩니다.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 간단한 인터랙티브 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            // 프로젝트 카드 클릭 효과
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.closest('a')) {
+                        const link = this.querySelector('a.btn-primary');
+                        if (link) {
+                            window.location.href = link.href;
+                        }
+                    }
+                });
+                
+                // 호버 시 약간의 회전 효과
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) rotate(1deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotate(0deg)';
+                });
+            });
+            
+            // 통계 숫자 카운트 업 효과
+            const statValues = document.querySelectorAll('.stat-value');
+            statValues.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + '+';
+                }, 30);
+            });
+            
+            // GitHub Pages 배지 애니메이션
+            const liveBadge = document.querySelector('.live-badge i');
+            if (liveBadge) {
+                setInterval(() => {
+                    liveBadge.style.animation = 'none';
+                    setTimeout(() => {
+                        liveBadge.style.animation = 'pulse 2s infinite';
+                    }, 10);
+                }, 4000);
+            }
+        });
+    </script>
+</body>
+</html>

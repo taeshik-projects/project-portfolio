@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ode to Joy - String Quartet V10 (Evaluation-Based Arrangement)</title>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(255, 150, 50, 0.3);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .player {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        midi-player {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .evaluation-section {
+            background: rgba(255, 150, 50, 0.2);
+            border-left: 4px solid rgba(255, 150, 50, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .evaluation-section h3 {
+            margin-top: 0;
+            color: #ffb366;
+        }
+        .score-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .score-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-right: 20px;
+            min-width: 80px;
+            text-align: center;
+        }
+        .score-bar {
+            flex-grow: 1;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .score-fill {
+            height: 100%;
+            border-radius: 10px;
+        }
+        .score-excellent { background: linear-gradient(90deg, #4CAF50, #8BC34A); }
+        .score-good { background: linear-gradient(90deg, #FFC107, #FF9800); }
+        .score-fair { background: linear-gradient(90deg, #FF9800, #FF5722); }
+        .score-poor { background: linear-gradient(90deg, #FF5722, #F44336); }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .info h3 {
+            margin-top: 0;
+        }
+        .info ul {
+            line-height: 1.8;
+        }
+        .improvement-highlight {
+            background: rgba(100, 255, 100, 0.2);
+            border-left: 4px solid rgba(100, 255, 100, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .problem-highlight {
+            background: rgba(255, 100, 100, 0.2);
+            border-left: 4px solid rgba(255, 100, 100, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .metric-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .progress-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        .progress-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+        .step-active {
+            background: rgba(100, 255, 100, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Ode to Joy</h1>
+        <div class="subtitle">
+            String Quartet - Auto-Arranged by AI
+            <br>
+            <span class="version-badge">✨ Version 9.0 - Evaluation-Based Approach</span>
+        </div>
+        
+        <div class="evaluation-section">
+            <h3>📊 AI 평가 함수 기반 편곡</h3>
+            <p><strong>새로운 접근법:</strong> 평가 함수를 만들어 편곡의 품질을 측정 → 문제점 진단 → 알고리즘 개선</p>
+            
+            <div class="progress-indicator">
+                <div class="progress-step">
+                    <div class="step-number step-active">1</div>
+                    <div>평가 함수 설계</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number step-active">2</div>
+                    <div>V8 문제점 진단</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number step-active">3</div>
+                    <div>V9 알고리즘 개선</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-number step-active">4</div>
+                    <div>품질 측정 및 배포</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="player">
+            <h2>▶️ Listen to V9</h2>
+            <midi-player
+                src="ode_to_joy_quartet_v10.mid"
+                sound-font 
+                visualizer="#myVisualizer">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="ode_to_joy_quartet_v10.mid" download class="download-btn">⬇️ Download MIDI</a>
+                <a href="ode_to_joy_quartet_v10.musicxml" download class="download-btn">⬇️ Download MusicXML</a>
+                <a href="quartet-v8.html" class="download-btn" style="background: rgba(150, 150, 150, 0.3);">👀 View V8</a>
+                <a href="quartet.html" class="download-btn" style="background: rgba(150, 150, 150, 0.2);">👀 View V1</a>
+            </div>
+        </div>
+        
+        <div class="improvement-highlight">
+            <h3>✅ V9 주요 개선사항</h3>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-title">Violin II - Viola 음 차이</div>
+                    <div class="metric-value">100%</div>
+                    <div>서로 다른 음 연주 (V8의 주요 문제 해결)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">화성 풍부도</div>
+                    <div class="metric-value">100/100</div>
+                    <div>4성부가 풍부한 화음 구성</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">Voice Leading</div>
+                    <div class="metric-value">95/100</div>
+                    <div>음과 음 사이 자연스러운 연결</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-title">총점 향상</div>
+                    <div class="metric-value">+2.5</div>
+                    <div>81.6 → 84.1/100</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📈 V8 vs V9 평가 결과 비교</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>평가 항목</th>
+                        <th>V8 점수</th>
+                        <th>V9 점수</th>
+                        <th>변화</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>멜로디 명확성</strong></td>
+                        <td>100.0</td>
+                        <td>72.6</td>
+                        <td>▼ 27.4</td>
+                        <td>화성 다양화로 일부 희생</td>
+                    </tr>
+                    <tr>
+                        <td><strong>베이스 라인 강도</strong></td>
+                        <td>94.9</td>
+                        <td>94.9</td>
+                        <td>± 0.0</td>
+                        <td>유지 (이미 우수)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>화성 풍부도</strong></td>
+                        <td>60.0</td>
+                        <td>100.0</td>
+                        <td>▲ 40.0</td>
+                        <td><strong>주요 개선!</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>음역 적절성</strong></td>
+                        <td>47.5</td>
+                        <td>50.0</td>
+                        <td>▲ 2.5</td>
+                        <td>약간 개선 but 여전히 문제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>리듬 정확성</strong></td>
+                        <td>100.0</td>
+                        <td>100.0</td>
+                        <td>± 0.0</td>
+                        <td>유지 (완벽)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Voice Leading</strong></td>
+                        <td>85.0</td>
+                        <td>95.0</td>
+                        <td>▲ 10.0</td>
+                        <td>크게 개선</td>
+                    </tr>
+                    <tr style="background: rgba(255, 255, 255, 0.1); font-weight: bold;">
+                        <td><strong>총점 (가중 평균)</strong></td>
+                        <td>81.6</td>
+                        <td>84.1</td>
+                        <td>▲ 2.5</td>
+                        <td>전체 품질 향상</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="problem-highlight">
+            <h3>⚠️ V9의 남은 문제점</h3>
+            <p><strong>음역 적절성 (50/100):</strong> 일부 악기가 이상적인 음역 밖에서 연주</p>
+            <p><strong>멜로디 명확성 하락 (72.6/100):</strong> 화성 다양화 과정에서 Violin I의 멜로디 선명도 감소</p>
+            
+            <h4>🎯 V10 설계 방향:</h4>
+            <ul>
+                <li><strong>음역 최적화 알고리즘:</strong> 각 악기의 "편안한 음역" 내에서만 연주하도록 강제</li>
+                <li><strong>멜로디-화성 균형:</strong> 화성 다양화와 멜로디 선명도 사이 최적점 찾기</li>
+                <li><strong>MuseScore.com 참고:</strong> 실제 인간 편곡가들의 음역 사용 패턴 분석</li>
+            </ul>
+        </div>
+        
+        <div class="info">
+            <h3>⚙️ V9 알고리즘: 평가 함수 기반 개선</h3>
+            
+            <h4>1. 화성 다양화 알고리즘</h4>
+            <ul>
+                <li><strong>Pitch Class 분석:</strong> 각 시간대별 가장 중요한 4개 pitch class 선택</li>
+                <li><strong>역할 분리:</strong> Violin II와 Viola가 서로 다른 pitch class 연주</li>
+                <li><strong>화음 구성:</strong> 3음, 5음, 7음 등 풍부한 화성 구조</li>
+            </ul>
+            
+            <h4>2. Voice Leading 최적화</h4>
+            <ul>
+                <li><strong>이전 음과의 연결:</strong> 각 성부별 이전 음과의 간격 최소화</li>
+                <li><strong>Stepwise Motion:</strong> 큰 도약(leap) 피하고 작은 간격 선호</li>
+                <li><strong>성부 독립성:</strong> 4성부가 각자 독립적으로 움직임</li>
+            </ul>
+            
+            <h4>3. V8 장점 유지</h4>
+            <ul>
+                <li><strong>마디 단위 접근:</strong> 각 마디 리듬 패턴 그대로 복사</li>
+                <li><strong>리듬 정확성:</strong> 모든 마디 정확히 4박자 보장</li>
+                <li><strong>역할 기반:</strong> Violin I(멜로디), Cello(베이스) 명확</li>
+            </ul>
+            
+            <h4>4. 평가 함수 항목 (0-100점)</h4>
+            <ul>
+                <li><strong>멜로디 명확성 (25%):</strong> Violin I이 원곡 멜로디 전달 정도</li>
+                <li><strong>베이스 라인 강도 (20%):</strong> Cello의 화성 기초 제공 정도</li>
+                <li><strong>화성 풍부도 (20%):</strong> 4성부 화음 다양성</li>
+                <li><strong>음역 적절성 (15%):</strong> 각 악기 적절 음역 사용</li>
+                <li><strong>리듬 정확성 (10%):</strong> 마디 경계 준수</li>
+                <li><strong>Voice Leading (10%):</strong> 음과 음 사이 자연스러움</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            <p>Generated: 2026-02-16 | Version 9.0 (Evaluation-Based Approach)</p>
+            <p><strong>Evolution:</strong> V1 → V8 → V9 (평가 함수 기반 과학적 개선)</p>
+            <p><strong>핵심 성과:</strong> 화성 풍부도 60 → 100/100, 총점 81.6 → 84.1/100</p>
+            <p>Powered by music21 + Python + html-midi-player + Evaluation Function</p>
+        </div>
+    </div>
+</body>
+</html>

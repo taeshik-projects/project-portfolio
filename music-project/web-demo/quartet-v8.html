@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ode to Joy - String Quartet V8 (Measure-Based Arrangement)</title>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.5.0"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(100, 255, 100, 0.3);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .player {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        midi-player {
+            display: block;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .rhythm-fix {
+            background: rgba(100, 255, 100, 0.2);
+            border-left: 4px solid rgba(100, 255, 100, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .rhythm-fix h3 {
+            margin-top: 0;
+            color: #a0ffa0;
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .info h3 {
+            margin-top: 0;
+        }
+        .info ul {
+            line-height: 1.8;
+        }
+        .measure-example {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .range-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .verification {
+            background: rgba(100, 200, 255, 0.2);
+            border-left: 4px solid rgba(100, 200, 255, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .warning {
+            background: rgba(255, 100, 100, 0.2);
+            border-left: 4px solid rgba(255, 100, 100, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎻 Ode to Joy</h1>
+        <div class="subtitle">
+            String Quartet - Auto-Arranged by AI
+            <br>
+            <span class="version-badge">✨ Version 8.0 - Measure-Based (리듬 수정)</span>
+        </div>
+        
+        <div class="rhythm-fix">
+            <h3>🎯 리듬 문제 해결: 마디 단위 접근법</h3>
+            <p><strong>문제:</strong> "4/4 time signature에 4분음표 4개랑 8분음표 2개가 들어가면 그건 5/4가 되는거잖아"</p>
+            <p><strong>해결:</strong> 각 마디(measure)를 개별적으로 분석 → 원곡 마디의 리듬 패턴 그대로 복사</p>
+            
+            <div class="measure-example">
+                <strong>첫 마디 예시 (Violin I):</strong><br>
+                ▸ 오프셋 0.00: F#6, <strong>2.0박자</strong><br>
+                ▸ 오프셋 2.00: G6, <strong>1.0박자</strong><br>
+                ▸ 오프셋 3.00: A6, <strong>1.0박자</strong><br>
+                <strong>합계: 4.0박자 ✅ (2.0 + 1.0 + 1.0 = 4.0)</strong>
+            </div>
+        </div>
+        
+        <div class="verification">
+            <h3>✅ 마디별 리듬 검증 통과</h3>
+            <p>각 마디의 음표 duration 합계가 정확히 <strong>4.0박자</strong>입니다:</p>
+            <ul>
+                <li>마디 1: 4.00박자 ✅</li>
+                <li>마디 2: 4.00박자 ✅</li>
+                <li>마디 3: 4.00박자 ✅</li>
+                <li>마디 4: 4.00박자 ✅</li>
+                <li>마디 5: 4.00박자 ✅</li>
+                <li>... 모든 24마디 통과</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            <h3>⚠️ 알려진 문제점</h3>
+            <p><strong>Violin II와 Viola가 같은 음을 연주함:</strong> 둘 다 F#4, G4, A4 등 같은 음높이</p>
+            <p><strong>해결 필요:</strong> 중음역대 화성을 더 다양하게 구성해야 함</p>
+        </div>
+        
+        <div class="player">
+            <h2>▶️ Listen</h2>
+            <midi-player
+                src="ode_to_joy_quartet_v8.mid"
+                sound-font 
+                visualizer="#myVisualizer">
+            </midi-player>
+            <midi-visualizer type="piano-roll" id="myVisualizer"></midi-visualizer>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="ode_to_joy_quartet_v8.mid" download class="download-btn">⬇️ Download MIDI</a>
+                <a href="ode_to_joy_quartet_v8.musicxml" download class="download-btn">⬇️ Download MusicXML</a>
+                <a href="quartet-v7.html" class="download-btn" style="background: rgba(150, 150, 150, 0.3);">👀 View V7</a>
+                <a href="quartet.html" class="download-btn" style="background: rgba(150, 150, 150, 0.2);">👀 View V1</a>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>📊 Arrangement Details (마디 단위 접근)</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Part</th>
+                        <th>Role</th>
+                        <th>Notes</th>
+                        <th>Range (MIDI)</th>
+                        <th>Range (Note)</th>
+                        <th>Unique Pitches</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Violin I</strong></td>
+                        <td>Melody</td>
+                        <td>89</td>
+                        <td>74-93</td>
+                        <td>F#5 - A6</td>
+                        <td>7개</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Violin II</strong></td>
+                        <td>Upper Harmony</td>
+                        <td>89</td>
+                        <td>57-69</td>
+                        <td>A3 - A4</td>
+                        <td>6개</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Viola</strong></td>
+                        <td>Middle Harmony</td>
+                        <td>89</td>
+                        <td>57-69</td>
+                        <td>A3 - A4</td>
+                        <td>6개</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cello</strong></td>
+                        <td>Bass</td>
+                        <td>76</td>
+                        <td>38-54</td>
+                        <td>D2 - F#3</td>
+                        <td>9개</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🎵 Duration Distribution (리듬 보존)</h3>
+            <ul>
+                <li><strong>8th notes (0.5 beats):</strong> 13-16 notes</li>
+                <li><strong>Quarter notes (1.0 beats):</strong> 42-56 notes ⭐️</li>
+                <li><strong>Dotted quarter (1.5 beats):</strong> 4-5 notes</li>
+                <li><strong>Half notes (2.0 beats):</strong> 9-13 notes</li>
+                <li><strong>Whole notes (3.0-4.0 beats):</strong> 7 notes (Cello only)</li>
+            </ul>
+            
+            <h3>⚙️ V8 알고리즘: 마디 단위 접근</h3>
+            <ol>
+                <li><strong>마디 분석:</strong> 원곡의 각 마디(24개)를 개별적으로 분석</li>
+                <li><strong>리듬 추출:</strong> 마디 내 리듬 패턴 그대로 복사 (offset + duration)</li>
+                <li><strong>역할 기반 음 선택:</strong> 각 offset에서 멜로디/베이스/하모니 음 선택</li>
+                <li><strong>마디 경계 유지:</strong> 각 마디가 독립적으로 처리되어 리듬 합계 보장</li>
+                <li><strong>음역 조정:</strong> 각 악기 연주 가능 범위 내로 조정</li>
+            </ol>
+            
+            <h3>🔍 V7 → V8 진화</h3>
+            <ul>
+                <li><strong>V7:</strong> 역할 기반 but 리듬 오류 (마디 경계 무시)</li>
+                <li><strong>V8:</strong> <strong>마디 단위 접근</strong> → 리듬 정확도 100% ✅</li>
+                <li><strong>Key Fix:</strong> "원곡에 있는 걸 베껴서 쓰면 된다" 원칙 구현</li>
+            </ul>
+            
+            <h3>📝 다음 개선점 (V9에서 해결)</h3>
+            <ul>
+                <li>Violin II와 Viola의 화성 다양화 (같은 음 연주 문제)</li>
+                <li>중음역대 더 풍부한 화성 구성</li>
+                <li>Voice leading 개선 (음과 음 사이 자연스러운 연결)</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            <p>Generated: 2026-02-16 | Version 8.0 (Measure-Based Approach)</p>
+            <p><strong>Feedback-Driven Development:</strong> V1 → V7 → V8 (사용자 피드백 기반 진화)</p>
+            <p><strong>핵심 성과:</strong> 마디 단위 리듬 보존 100% 달성 ✅</p>
+            <p>Powered by music21 + Python + html-midi-player</p>
+        </div>
+    </div>
+</body>
+</html>
