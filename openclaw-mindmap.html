@@ -825,7 +825,7 @@
             .attr('text-anchor', d => d.x < Math.PI ? 'start' : 'end')
             .attr('transform', d => {
                 const angle = d.x * 180 / Math.PI - 90;
-                return `rotate(${angle})translate(${d.y + 20},0)${d.x >= Math.PI ? 'rotate(180)' : ''}`;
+                return `rotate(${angle})translate(${d.y + 8},0)${d.x >= Math.PI ? 'rotate(180)' : ''}`;
             })
             .text(d => {
                 // 텍스트 길이에 따라 줄임
