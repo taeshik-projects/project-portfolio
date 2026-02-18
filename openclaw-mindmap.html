@@ -823,7 +823,7 @@
             .attr('dy', d => d.depth === 0 ? '0.35em' : '0.35em')
             .attr('x', d => {
                 const angle = d.x * 180 / Math.PI;
-                return (angle > 90 && angle < 270) ? -15 : 15;
+                return (angle > 90 && angle < 270) ? -25 : 25;
             })
             .attr('text-anchor', d => {
                 const angle = d.x * 180 / Math.PI;
