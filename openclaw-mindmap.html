@@ -818,73 +818,14 @@
             })
             .attr('stroke-width', d => d.depth === 0 ? 3 : 2);
         
-        // 노드 텍스트 그리기 - 모든 텍스트가 원 바깥쪽으로 향하도록 강제
+        // 노드 텍스트 그리기 - D3 표준 방사형 패턴 사용
         node.append('text')
             .attr('dy', '0.35em')
-            .attr('x', d => {
-                // 각도에 따라 텍스트 위치 결정 (라디안)
-                const angle = d.x; // 0 = 위쪽, π/2 = 오른쪽, π = 아래쪽, 3π/2 = 왼쪽
-                
-                // 각도를 0-360도로 변환
-                const deg = (angle * 180 / Math.PI) % 360;
-                
-                // 원 바깥쪽 방향으로 텍스트 배치
-                // 오른쪽 절반 (45° ~ 135°): 텍스트를 오른쪽으로
-                // 왼쪽 절반 (225° ~ 315°): 텍스트를 왼쪽으로
-                // 위쪽 절반 (315° ~ 45°): 텍스트를 위쪽으로 (y 오프셋 사용)
-                // 아래쪽 절반 (135° ~ 225°): 텍스트를 아래쪽으로 (y 오프셋 사용)
-                
-                // 먼저 x 오프셋 결정
-                if (deg >= 45 && deg <= 135) {
-                    // 오른쪽: 텍스트를 오른쪽으로
-                    return 35;
-                } else if (deg >= 225 && deg <= 315) {
-                    // 왼쪽: 텍스트를 왼쪽으로
-                    return -35;
-                } else {
-                    // 위쪽/아래쪽: x 오프셋은 작게
-                    return 0;
-                }
-            })
-            .attr('y', d => {
-                // y 오프셋 결정
-                const angle = d.x;
-                const deg = (angle * 180 / Math.PI) % 360;
-                
-                if (deg >= 315 || deg <= 45) {
-                    // 위쪽: 텍스트를 위쪽으로
-                    return -25;
-                } else if (deg >= 135 && deg <= 225) {
-                    // 아래쪽: 텍스트를 아래쪽으로
-                    return 25;
-                } else {
-                    // 오른쪽/왼쪽: y 오프셋은 작게
-                    return 0;
-                }
-            })
-            .attr('text-anchor', d => {
-                // text-anchor 결정
-                const angle = d.x;
-                const deg = (angle * 180 / Math.PI) % 360;
-                
-                if (deg >= 45 && deg <= 135) {
-                    // 오른쪽: start (오른쪽으로 뻗음)
-                    return 'start';
-                } else if (deg >= 225 && deg <= 315) {
-                    // 왼쪽: end (왼쪽으로 뻗음)
-                    return 'end';
-                } else {
-                    // 위쪽/아래쪽: middle (중앙 정렬)
-                    return 'middle';
-                }
-            })
+            .attr('x', d => d.x < Math.PI ? 10 : -10)
+            .attr('text-anchor', d => d.x < Math.PI ? 'start' : 'end')
             .attr('transform', d => {
-                const angle = (d.x * 180 / Math.PI - 90);
-                // 텍스트가 거꾸로 보이지 않도록 각도 조정
-                if (angle > 90 && angle < 270) {
-                    return `rotate(${angle + 180})`;
-                }
-                return `rotate(${angle})`;
+                const angle = d.x * 180 / Math.PI - 90;
+                return `rotate(${angle})translate(${d.y + 20},0)${d.x >= Math.PI ? 'rotate(180)' : ''}`;
             })
             .text(d => {
                 // 텍스트 길이에 따라 줄임
