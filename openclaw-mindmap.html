@@ -822,12 +822,16 @@
         node.append('text')
             .attr('dy', d => d.depth === 0 ? '0.35em' : '0.35em')
             .attr('x', d => {
-                const angle = d.x * 180 / Math.PI;
-                return (angle > 90 && angle < 270) ? -25 : 25;
+                const cos = Math.cos(d.x);
+                // cos > 0: 오른쪽 절반, cos < 0: 왼쪽 절반
+                // 원 바깥쪽으로 텍스트 배치
+                return cos > 0 ? 25 : -25;
             })
             .attr('text-anchor', d => {
-                const angle = d.x * 180 / Math.PI;
-                return (angle > 90 && angle < 270) ? 'end' : 'start';
+                const cos = Math.cos(d.x);
+                // 오른쪽 절반: start (텍스트가 오른쪽으로 뻗음)
+                // 왼쪽 절반: end (텍스트가 왼쪽으로 뻗음)
+                return cos > 0 ? 'start' : 'end';
             })
             .attr('transform', d => {
                 const angle = (d.x * 180 / Math.PI - 90);
